@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  // Target graduation event time: 11:00 AM, Nov 26, 2026 (GMT+7)
+  // Target graduation event time: 11:00 AM - 12:30 PM, Nov 26, 2026 (GMT+7)
   const EVENT_START = new Date('2026-11-26T11:00:00+07:00').getTime();
-  const EVENT_END = new Date('2026-11-26T13:00:00+07:00').getTime();
+  const EVENT_END = new Date('2026-11-26T12:30:00+07:00').getTime();
 
   // DOM Elements
   const envelopeOverlay = document.getElementById('envelope-overlay');
@@ -128,9 +128,9 @@
       'UID:graduation-2026-nguyenduyphuc@hcmus.edu.vn',
       'SUMMARY:🎓 Lễ Tốt Nghiệp Đại Học - Nguyễn Duy Phúc',
       'DTSTART:20261126T040000Z',
-      'DTEND:20261126T060000Z',
+      'DTEND:20261126T053000Z',
       'LOCATION:Trường Đại học Khoa học Tự nhiên (Cơ sở 1)\\, 227 Nguyễn Văn Cừ\\, Phường Chợ Quán\\, TP.HCM',
-      'DESCRIPTION:Thân mời bạn tham dự Lễ Tốt Nghiệp của Nguyễn Duy Phúc (11:00 - 13:00 Thứ Năm 26/11/2026). Liên hệ: 0936197861.',
+      'DESCRIPTION:Thân mời bạn tham dự Lễ Tốt Nghiệp của Nguyễn Duy Phúc (11:00 - 12:30 Thứ Năm 26/11/2026). Liên hệ: 0936197861.',
       'STATUS:CONFIRMED',
       'END:VEVENT',
       'END:VCALENDAR'

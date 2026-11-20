@@ -4,7 +4,7 @@ Trang web thiệp mời dự Lễ Tốt Nghiệp Đại học (1-page static web
 
 ## 📌 Thông tin sự kiện
 - **Tân Cử Nhân:** Nguyễn Duy Phúc
-- **Thời gian:** 11:00 – 13:00, Thứ Năm ngày 26/11/2026
+- **Thời gian:** 11:00 – 12:30, Thứ Năm ngày 26/11/2026
 - **Địa điểm:** Trường Đại học Khoa học Tự nhiên, Cơ sở 1 (227 Nguyễn Văn Cừ, Phường Chợ Quán, TP.HCM)
 - **Liên hệ:** 0936 197 861
 
