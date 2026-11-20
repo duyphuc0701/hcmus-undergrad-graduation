@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Mời Lễ Tốt Nghiệp | Nguyễn Duy Phúc — HCMUS</title>
+  <meta name="description"
+    content="Thân mời bạn đến tham dự Lễ Tốt Nghiệp Đại học của Nguyễn Duy Phúc tại Trường Đại học Khoa học Tự nhiên (227 Nguyễn Văn Cừ) vào 11:00 - 13:00 Thứ Năm, 26/11/2026." />
+
+  <!-- Open Graph / Social Sharing (Messenger, Zalo, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🎓 Thiệp Mời Lễ Tốt Nghiệp — Nguyễn Duy Phúc" />
+  <meta property="og:description"
+    content="11:00 – 13:00 | Thứ Năm, 26/11/2026 • ĐH Khoa học Tự nhiên, Cơ sở 1 (227 Nguyễn Văn Cừ, P. Chợ Quán, TP.HCM)" />
+  <meta property="og:image" content="graduate.jpg" />
+
+  <!-- Google Fonts with full Vietnamese support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Action Bar -->
+  <div class="floating-controls">
+    <button id="btn-celebrate" class="fab-btn" type="button" title="Tung pháo hoa chúc mừng">
+      <span class="fab-icon">🎉</span>
+      <span class="fab-label">Chúc mừng</span>
+    </button>
+    <button id="btn-share-modal" class="fab-btn" type="button" title="Tạo link thiệp mời có tên khách">
+      <span class="fab-icon">✉️</span>
+      <span class="fab-label">Tạo link mời</span>
+    </button>
+  </div>
+
+  <!-- Envelope Intro Overlay -->
+  <div id="envelope-overlay" class="envelope-overlay" role="dialog" aria-label="Mở thiệp mời tốt nghiệp">
+    <div class="envelope-card">
+      <div class="envelope-seal">
+        <svg viewBox="0 0 64 64" width="44" height="44" fill="none" aria-hidden="true">
+          <path d="M32 10L6 22L32 34L58 22L32 10Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M16 27V42C16 46.5 23.2 51 32 51C40.8 51 48 46.5 48 42V27" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M54 24V41" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="54" cy="43" r="2.5" fill="currentColor" />
+        </svg>
+      </div>
+      <p class="envelope-subtitle">CLASS OF 2026 • HCMUS</p>
+      <h1 class="envelope-title">Thiệp Mời<br />Lễ Tốt Nghiệp</h1>
+      <p class="envelope-recipient">
+        Thân gửi: <strong id="envelope-guest-name">Bạn và Gia đình</strong>
+      </p>
+      <p class="envelope-from">Từ: <span>Nguyễn Duy Phúc</span></p>
+      <button id="btn-open-card" class="btn-gold-primary" type="button">
+        <span>Mở Thiệp Mời</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Invitation Content -->
+  <main class="page-wrapper">
+    <!-- Hero Invitation Card -->
+    <section class="invitation-card reveal">
+      <div class="card-corner corner-tl" aria-hidden="true"></div>
+      <div class="card-corner corner-tr" aria-hidden="true"></div>
+      <div class="card-corner corner-bl" aria-hidden="true"></div>
+      <div class="card-corner corner-br" aria-hidden="true"></div>
+
+      <!-- Top Header Badge -->
+      <header class="card-header">
+        <div class="university-pill">
+          <span class="pill-dot"></span>
+          <span>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN • ĐHQG-HCM</span>
+        </div>
+        <p class="invitation-overline">GRADUATION CEREMONY INVITATION</p>
+        <h2 class="invitation-heading">Lễ Tốt Nghiệp Đại Học</h2>
+        <div class="ornament-divider" aria-hidden="true">
+          <span class="line"></span>
+          <span class="diamond">❖</span>
+          <span class="line"></span>
+        </div>
+      </header>
+
+      <!-- Hero Grid: Photo + Greeting -->
+      <div class="hero-grid">
+        <div class="photo-column">
+          <div class="photo-frame-outer">
+            <div class="photo-badge-year">2022 – 2026</div>
+            <div class="photo-frame-inner">
+              <img src="graduate.jpg" alt="Nguyễn Duy Phúc - Tân Cử nhân Trường Đại học Khoa học Tự nhiên"
+                class="graduate-photo" />
+            </div>
+            <div class="photo-caption-plate">
+              <span class="mortarboard-icon" aria-hidden="true">🎓</span>
+              <div>
+                <div class="graduate-plate-title">Tân Cử Nhân</div>
+                <div class="graduate-plate-name">Nguyễn Duy Phúc</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="greeting-column">
+          <div class="guest-greeting-box">
+            <span class="greeting-label">Trân trọng kính mời</span>
+            <h3 id="guest-display-name" class="guest-name-highlight">Bạn cùng người thương</h3>
+          </div>
+
+          <p class="invitation-message">
+            Sau hành trình 4 năm học tập và rèn luyện dưới mái trường
+            <strong>Đại học Khoa học Tự nhiên (HCMUS)</strong>, cột mốc tốt nghiệp
+            đáng nhớ nhất của mình đã chính thức gõ cửa.
+          </p>
+          <p class="invitation-message">
+            Niềm vui trong ngày khoác lên mình chiếc áo cử nhân sẽ trọn vẹn và ý nghĩa
+            hơn rất nhiều khi có sự hiện diện, chung vui và lưu giữ những bức ảnh kỷ niệm
+            cùng bạn!
+          </p>
+
+          <!-- Key Highlights Quick Strip -->
+          <div class="highlight-strip">
+            <div class="strip-item">
+              <span class="strip-icon" aria-hidden="true">🗓️</span>
+              <div>
+                <div class="strip-label">Ngày</div>
+                <div class="strip-value">Thứ Năm, 26/11/2026</div>
+              </div>
+            </div>
+            <div class="strip-item">
+              <span class="strip-icon" aria-hidden="true">⏰</span>
+              <div>
+                <div class="strip-label">Khung giờ chụp ảnh &amp; giao lưu</div>
+                <div class="strip-value">11:00 – 13:00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="hero-actions">
+            <a href="tel:0936197861" class="btn-primary-action">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Gọi Phúc: 0936 197 861</span>
+            </a>
+            <a href="#location-section" class="btn-secondary-action">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <circle cx="12" cy="10" r="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Xem bản đồ chỉ đường</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown & Schedule Section -->
+    <section class="details-section reveal">
+      <div class="section-title-wrap">
+        <span class="section-tag">SAVE THE DATE</span>
+        <h2 class="section-title">Thời Gian &amp; Đếm Ngược</h2>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-container" id="countdown-container" aria-live="polite">
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-days">00</span>
+          <span class="countdown-unit">Ngày</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-hours">00</span>
+          <span class="countdown-unit">Giờ</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-minutes">00</span>
+          <span class="countdown-unit">Phút</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cd-seconds">00</span>
+          <span class="countdown-unit">Giây</span>
+        </div>
+      </div>
+      <p id="countdown-status" class="countdown-status-note">
+        Đếm ngược đến 11:00 trưa Thứ Năm, ngày 26/11/2026
+      </p>
+
+      <!-- Info Cards Grid -->
+      <div class="info-cards-grid">
+        <!-- Time Card -->
+        <article class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+          <span class="info-card-label">THỜI GIAN</span>
+          <h3 class="info-card-heading">11:00 – 13:00</h3>
+          <p class="info-card-sub">Thứ Năm, Ngày 26 tháng 11 năm 2026</p>
+          <p class="info-card-desc">
+            Khung giờ đẹp nhất để gặp gỡ, trò chuyện và chụp hình kỷ niệm tại sân trường.
+          </p>
+          <div class="info-card-actions">
+            <a id="btn-google-cal"
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85+T%E1%BB%91t+Nghi%E1%BB%87p+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+-+Nguy%E1%BB%85n+Duy+Ph%C3%BAc&dates=20261126T110000/20261126T130000&ctz=Asia/Ho_Chi_Minh&details=Tham+d%E1%BB%B1+L%E1%BB%85+T%E1%BB%91t+Nghi%E1%BB%87p+c%E1%BB%A7a+Nguy%E1%BB%85n+Duy+Ph%C3%BAc.+Li%C3%AAn+h%E1%BB%87:+0936197861&location=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Khoa+h%E1%BB%8Dc+T%E1%BB%B1+nhi%C3%AAn+(C%C6%A1+s%E1%BB%9F+1),+227+Nguy%E1%BB%85n+V%C4%83n+C%E1%BB%AB,+Ph%C6%B0%E1%BB%9Dng+Ch%E1%BB%A3+Qu%C3%A1n,+TP.HCM"
+              target="_blank" rel="noopener noreferrer" class="chip-btn">
+              <span>+ Google Calendar</span>
+            </a>
+            <button id="btn-download-ics" type="button" class="chip-btn chip-outline">
+              <span>Tải lịch (.ics)</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Venue Card -->
+        <article class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+          </div>
+          <span class="info-card-label">ĐỊA ĐIỂM</span>
+          <h3 class="info-card-heading">ĐH Khoa Học Tự Nhiên (Cơ sở 1)</h3>
+          <p class="info-card-sub">227 Nguyễn Văn Cừ, Phường Chợ Quán, TP.HCM</p>
+          <p class="info-card-desc">
+            Khuôn viên sân chính Cơ sở 1 — Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM.
+          </p>
+          <div class="info-card-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Khoa+h%E1%BB%8Dc+T%E1%BB%B1+nhi%C3%AAn+227+Nguy%E1%BB%85n+V%C4%83n+C%E1%BB%AB"
+              target="_blank" rel="noopener noreferrer" class="chip-btn">
+              <span>Mở Google Maps</span>
+            </a>
+            <button id="btn-copy-address" type="button" class="chip-btn chip-outline"
+              data-copy="227 Nguyễn Văn Cừ, Phường Chợ Quán, TP.HCM">
+              <span>Sao chép địa chỉ</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Contact Card -->
+        <article class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <span class="info-card-label">LIÊN HỆ TRỰC TIẾP</span>
+          <h3 class="info-card-heading">0936 197 861</h3>
+          <p class="info-card-sub">Nguyễn Duy Phúc</p>
+          <p class="info-card-desc">
+            Khi đến cổng trường, bạn hãy gọi hoặc nhắn Zalo cho mình để mình ra đón ngay nhé!
+          </p>
+          <div class="info-card-actions">
+            <a href="tel:0936197861" class="chip-btn">
+              <span>Gọi điện ngay</span>
+            </a>
+            <a href="https://zalo.me/0936197861" target="_blank" rel="noopener noreferrer"
+              class="chip-btn chip-outline">
+              <span>Nhắn Zalo</span>
+            </a>
+            <button id="btn-copy-phone" type="button" class="chip-btn chip-outline" data-copy="0936197861">
+              <span>Copy SĐT</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Map & Guide Section -->
+    <section id="location-section" class="map-section reveal">
+      <div class="map-card">
+        <div class="map-info-side">
+          <span class="section-tag">LOCATION &amp; GUIDE</span>
+          <h2 class="map-heading">Hướng Dẫn Di Chuyển</h2>
+          <p class="map-address-line">
+            <strong>Trường Đại học Khoa học Tự nhiên — Cơ sở 1</strong><br />
+            227 Nguyễn Văn Cừ, Phường Chợ Quán, TP. Hồ Chí Minh
+          </p>
+
+          <ul class="guide-list">
+            <li>
+              <span class="guide-bullet">1</span>
+              <div>
+                <strong>Cổng vào &amp; Gửi xe:</strong> Bạn có thể đi cổng chính số
+                <em>227 Nguyễn Văn Cừ</em> (gần ngã tư Nguyễn Văn Cừ – Nguyễn Trãi / An Dương Vương).
+                Nếu bãi xe trong trường đông, có thể gửi xe tại nhà giữ xe trường Lê Hồng Phong hoặc trung tâm thương
+                mại Nowzone gần đó.
+              </div>
+            </li>
+            <li>
+              <span class="guide-bullet">2</span>
+              <div>
+                <strong>Khung giờ thuận tiện:</strong> Mình có mặt tại sân trường từ
+                <strong>11:00 đến 13:00</strong> Thứ Năm (26/11/2026).
+              </div>
+            </li>
+            <li>
+              <span class="guide-bullet">3</span>
+              <div>
+                <strong>Liên hệ khi tới nơi:</strong> Gọi ngay số
+                <a href="tel:0936197861" class="inline-phone-link">0936 197 861</a>
+                để Phúc báo vị trí đứng chính xác trong sân trường nhé!
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="map-embed-side">
+          <iframe title="Bản đồ Trường Đại học Khoa học Tự nhiên TP.HCM - 227 Nguyễn Văn Cừ"
+            src="https://www.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Khoa+h%E1%BB%8Dc+T%E1%BB%B1+nhi%C3%AAn+227+Nguy%E1%BB%85n+V%C4%83n+C%E1%BB%AB,+TP.HCM&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Note -->
+    <footer class="page-footer">
+      <div class="footer-crest" aria-hidden="true">🎓</div>
+      <p class="footer-quote">
+        “Sự hiện diện của bạn là món quà quý giá nhất trong ngày tốt nghiệp của mình!”
+      </p>
+      <p class="footer-sign">
+        Hẹn gặp bạn vào <strong>11:00 – 13:00, Thứ Năm 26/11/2026</strong> • <strong>Nguyễn Duy Phúc</strong>
+      </p>
+    </footer>
+  </main>
+
+  <!-- Personalized Link Generator Modal -->
+  <div id="share-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true"
+    aria-labelledby="share-modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="share-modal-title">✉️ Tạo Link Thiệp Mời Cá Nhân Hóa</h3>
+        <button id="btn-close-modal" type="button" class="modal-close-btn" aria-label="Đóng">&times;</button>
+      </div>
+      <p class="modal-desc">
+        Nhập tên người nhận (ví dụ: <em>Anh Tuấn</em>, <em>Bạn Minh</em>, <em>Gia đình mình</em>) để tạo đường link
+        thiệp mời hiển thị riêng tên của họ khi mở thiệp.
+      </p>
+      <div class="modal-form">
+        <label for="input-guest-name" class="modal-label">Tên khách mời trên thiệp:</label>
+        <input id="input-guest-name" type="text" class="modal-input" placeholder="VD: Bạn Lan Anh" maxlength="60" />
+        <div class="modal-preview-url" id="generated-url-preview"></div>
+        <div class="modal-actions">
+          <button id="btn-copy-custom-link" type="button" class="btn-gold-primary">
+            <span>Sao chép link mời</span>
+          </button>
+          <button id="btn-apply-guest-preview" type="button" class="chip-btn chip-outline">
+            <span>Xem thử trên thiệp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
